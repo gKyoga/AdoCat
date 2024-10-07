@@ -1,0 +1,179 @@
+/* Importação das Fontes da pagina*/
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+/* Variaveis de cores*/
+:root{
+    /*cores mais claras*/
+    --cor-principal-clara:#FF4791;
+    --cor-complementar-clara:#445174;
+    --cor-destaque-clara:#F19B6A;
+    --cor-apoio-clara:#FEF6EB;
+    
+    
+    /*cores Principais*/
+    --cor-principal:#FF1F78;
+    --cor-complementar:#353F5A;
+    --cor-destaque:#ED7D3A;
+    --cor-apoio:#FDE3C4;
+    
+    /*cores Principais escuras*/
+    --cor-principal-escura:#E0005A;
+    --cor-complementar-escura:#1E2433;
+    --cor-destaque-escura:#E05F15;
+    --cor-apoio-escura:#FBC789;
+}
+
+
+body{
+    width: 100%;
+    height: 200vh;
+    background-color: var(--cor-apoio);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+
+/*Formatação do header da pagina*/
+header{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 11% 0 11%;
+    z-index: 10;
+}
+
+.headerLogo{
+    display: flex;
+    font-size: 40px;
+    font-weight: lighter;
+    color: var(--cor-principal);
+}
+
+.headerLogo img{
+    margin-right: 10px;
+}
+
+
+.headerInf a{
+    margin-left: 10px;
+    font-size: 24px;
+    color: var(--cor-complementar);
+    font-weight: normal;
+}
+
+.headerInf a[href="/"]{
+    color:var(--cor-principal);
+    font-weight: bold;
+} 
+
+.headerInf a:hover{
+    cursor: pointer;
+    color: var(--cor-principal-clara);
+}
+/*Fim da formatação do header*/
+
+/*Formatação do Conteudo principal da pagina*/
+.mainContent{
+    width: 100%;
+    height: 70vh;
+    padding: 0 11% 0 11%;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.mainText{
+    width: 45%;
+}
+
+.mainText h1{
+    font-size: 48px;
+    font-size: 2.7vw;
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+
+.mainText p{
+    margin-top: 2%;
+    font-size: 1.4vw;
+    color: var(--cor-complementar);
+    text-align: justify;
+}
+
+.mainText button img{
+    margin-left: 5px;
+}
+
+.mainText button{
+    width: 236px;
+    height: 52px;
+    display: flex;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--cor-principal);
+    border-radius: 40px;
+    font-family: "Geologica", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color:var(--cor-apoio);
+}
+
+.mainText button:hover{
+    background-color: var(--cor-principal-escura);
+    cursor: pointer;
+}
+
+/*Gambiarra da foto favor nao mexer*/
+.mainFt{
+    width: 75%;
+    margin-top: 4%;
+    margin-left: 47%;
+    height: 100%;
+    position: absolute;
+    overflow:hidden;
+    z-index: 0;
+}
+/*Fim da formatação do conteudo principal*/
+
+/*Inicio da formatação do conteudo de separação*/
+.midContent{
+    background-color: var(--cor-principal);
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.midText{
+    width: 100%;
+    height: 25%;
+    font-size: 4.5vw;
+    text-align: center;
+    color: var(--cor-apoio);
+}
+
+.midHeader{
+    width: 80%;
+    height: 75%;
+    margin-top: -3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.circulo{
+    background-color: var(--cor-principal);
+    width: 15%;
+    height: 63%;
+    margin-top: -15%;
+    border-radius: 100%;
+    border: 10px solid var(--cor-apoio);
+}
+
