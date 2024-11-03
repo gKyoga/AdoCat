@@ -25,11 +25,11 @@
         <div class="mainText">
             <h1>Adote um gatinho</h1>
             <p>Comece escolhendo o posto de adoção mais próximo de sua casa e escolha os gatinhos mais lindo do miiaundo.  Deixe o amor felino invadir a sua casa e adote já o seu companheiro.</p>
-            <button>Adote já!<img src="static/assets/LogoButton.png" width="11%" height="10%" draggable="false"></button>
+            <button>Adote já!<img src="static/assets/logoButton.png" width="11%" height="10%" draggable="false"></button>
         </div>
     </section>
     <div class="mainFt">
-        <img src="static/assets/Gatos.png" width="100%"  draggable="false">
+        <img src="static/assets/gatos.png" width="100%"  draggable="false">
     </div>
 
     <section class="midContent">
@@ -58,6 +58,22 @@
         <div class="midText">
             <h1>Apresentando</h1>
         </div>
+        <div class="midTexto">
+            <h1>Nossos Gatinhos</h1>
+        </div>
     </section>
+    <section class="feedGatos">
+
+        {% for gato in gatos_listados %}
+        <div class="feedCard">
+            <div class="cardOverlay">
+                <h1>{{gato.nome_gato}}</h1>
+                <button>Adote já!<img src="static/assets/logoButtonBlue.png" draggable="false"></button>
+            </div>
+            <img src="static/assets/{{gato.foto_gato}}" alt="{{gato.nome_gato}}">
+        </div>
+        {% endfor %}
+    </section>
+
 </body>
 </html>
