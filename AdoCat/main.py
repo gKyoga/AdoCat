@@ -5,11 +5,13 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+app.secret_key = 'ninacomemuito'
+
 app.config['SQLALCHEMY_DATABASE_URI'] = \
     '{SGBD}://{usuario}:{senha}@{servidor}/{database}{versao}'.format(
         SGBD = 'mysql+pymysql',
-        senha = 'Kyoga%402003',
-        usuario = 'Kyoga',
+        senha = 'teste',
+        usuario = 'teste',
         servidor = '127.0.0.1',
         database = 'db_adocat',
         versao = '?charset=utf8mb4',

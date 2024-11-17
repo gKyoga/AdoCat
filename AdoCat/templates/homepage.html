@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdoCat</title>
     <link rel="stylesheet" href="static/reset.css">
     <link rel="stylesheet" href="static/homestyle.css">
+    <script src="static/script/loginScript.js" defer></script>
 </head>
+
 <body>
+
+    <!-- HEADER PAGINA -->
     <header>
         <div class="headerLogo">
             <img src="static/assets/logo.png" width="9%" draggable="false">
@@ -17,44 +22,72 @@
 
         <div class="headerInf">
             <a href="/">ínicio</a>
-            <a href="adocao">adoção</a>
             <a href="contato">contato</a>
+            <p>|</p>
+            <p>Olá, {{usuario}}</p>
         </div>
+
+        <div class="headerMenuButton">
+            <button onclick="toggleMenu()"><img src="static/assets/menuHeader.png" alt=""></button>
+        </div>
+
+        <section class="headerMenu" id="headerMenu" onmouseover="resetTimer()">
+            <div class="menuContainer">
+                <div>
+                    <a href="">cadastrar gato</a>
+                </div>
+                <div>
+                    <a href="">ver perfil</a>
+                </div>
+                <div>
+                    <a href="/logout">
+                        logout
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </header>
+    <!-- HEADER PAGINA -->
+    
+    {%  block conteudo  %} {%    endblock   %}
+    
     <section class="mainContent">
         <div class="mainText">
             <h1>Adote um gatinho</h1>
-            <p>Comece escolhendo o posto de adoção mais próximo de sua casa e escolha os gatinhos mais lindo do miiaundo.  Deixe o amor felino invadir a sua casa e adote já o seu companheiro.</p>
-            <button>Adote já!<img src="static/assets/logoButton.png" width="11%" height="10%" draggable="false"></button>
+            <p>Comece escolhendo o posto de adoção mais próximo de sua casa e escolha os gatinhos mais lindo do
+                miiaundo. Deixe o amor felino invadir a sua casa e adote já o seu companheiro.</p>
+            <button onclick="">Adote já!<img src="static/assets/logoButton.png" width="11%" height="10%"
+                    draggable="false"></button>
         </div>
     </section>
     <div class="mainFt">
-        <img src="static/assets/gatos.png" width="100%"  draggable="false">
+        <img src="static/assets/gatos.png" width="100%" draggable="false">
     </div>
-
+    
     <section class="midContent">
         <div class="midHeader">
-            <div class="circulo"> 
-                <img src="static/assets/logoSearch.png" alt="search" width="70%"> 
+            <div class="circulo">
+                <img src="static/assets/logoSearch.png" alt="search" width="70%">
             </div>
-            <div class="circulo"> 
-                <img src="static/assets/logoHuman.png" alt="dataHuman" width="50%"> 
+            <div class="circulo">
+                <img src="static/assets/logoHuman.png" alt="dataHuman" width="50%">
             </div>
-            <div class="circulo"> 
-                <img src="static/assets/logoCat.png" alt="Cat" width="50%"> 
+            <div class="circulo">
+                <img src="static/assets/logoCat.png" alt="Cat" width="50%">
             </div>
         </div>
-
+    
         <div class="circuloTXT">
-           
+    
             <p>Procure um miaumigo</p>
-          
+    
             <p>Coloque seus dados</p>
     
             <p>Adote seu novo gatinho</p>
-           
+    
         </div>
-
+    
         <div class="midText">
             <h1>Apresentando</h1>
         </div>
@@ -63,7 +96,7 @@
         </div>
     </section>
     <section class="feedGatos">
-
+    
         {% for gato in gatos_listados %}
         <div class="feedCard">
             <div class="cardOverlay">
@@ -76,4 +109,5 @@
     </section>
 
 </body>
+
 </html>

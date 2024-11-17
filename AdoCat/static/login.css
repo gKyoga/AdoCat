@@ -1,0 +1,262 @@
+/* pai */
+/* Bloqueio do scroll da página */
+body.no-scroll {
+    overflow: hidden; /* Desabilita o scroll da página */
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Ajustado para cobrir toda a altura da tela */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+    display: none; /* Inicialmente escondido */
+    z-index: 13; /* Fica abaixo da tela flutuante */
+}
+
+/* Tela flutuante */
+.loginContent {
+    align-self: center;
+    margin-top: 5vw;
+    background-color: var(--cor-complementar);
+    position: absolute;
+    width: 60vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    z-index: 14; /* Fica acima do overlay */
+    opacity: 1; /* Garantindo visibilidade inicial */
+    pointer-events: all; /* Permite interação com a tela flutuante */
+    transition: opacity 0.5s ease; /* Transição suave ao esconder */
+}
+
+/* Esconder a tela flutuante */
+.loginContent.hidden {
+    opacity: 0; /* Torna invisível */
+    pointer-events: none; /* Desabilita a interação */
+}
+
+/* Exibir o overlay */
+.overlay.visible {
+    display: block; /* Torna o overlay visível */
+}
+.loginForm{
+    /* background-color: red; */
+    width: 30vw;
+    display: flex;
+    padding: 5vw 4vw 7vw 4vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerForm{
+    height: 10vw;
+    width: 27vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0 -1vw 0 -1vw;
+}
+
+
+
+.headerForm h1{
+    margin-left: 1vw;
+    text-align: start;
+    font-size: 3vw;
+    color: var(--cor-apoio);
+}
+
+.headerForm p{
+    width: 26vw;
+    text-align: start;
+    font-size: 1.1vw;
+    font-weight: lighter;
+    opacity: 80%;
+    color: var(--cor-apoio);
+    margin-left: 1vw;
+}
+
+
+.mainContentForm{
+    height: 90vw;  
+}
+
+.mainForm{
+    height: 25vw;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.mainForm label:first-child{
+    margin-top: 1vw;
+}
+
+.mainForm label{
+    margin-top: 2vw;
+    font-size: 1vw;
+    font-weight: lighter;
+    color: var(--cor-apoio);
+}
+
+.mainForm input{
+    width: 25vw;
+    height: 2.3vw;
+    margin-top: 1vw;
+    padding: 1vw;
+    background-color: transparent;
+    border: 1px solid var(--cor-apoio);
+    border-radius: 24px;
+    font-size: 1vw;
+    color: var(--cor-apoio);
+}
+
+.mainForm input:focus{
+    outline: none;
+}
+
+input:focus::after {
+    content: '|'; /* O tracinho (representando o cursor) */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #333;
+    animation: blink 1s steps(1) infinite; /* Animação para o efeito piscante */
+}
+
+/* Animação para o tracinho piscante */
+@keyframes blink {
+    50% {
+        opacity: 0; /* Faz o tracinho desaparecer no meio da animação */
+    }
+}
+
+
+
+
+.mainContentForm img{
+    width: 1.5vw;
+    margin-left: 1.5vw;
+}
+
+.mainContentForm button{
+    width: 23vw;
+    height: 19vw;
+    margin: 1vw 0 0 1vw ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: var(--cor-principal);
+    border-radius: 40px;
+    font-size: 0.7vw;
+    font-weight: bold;
+    color:var(--cor-apoio);
+}
+
+.mainContentForm button:hover{
+    cursor: pointer;
+    background-color: var(--cor-principal-escura);
+}
+
+.mainContentForm p{
+    margin: 1vw 0 0 4vw;
+    color: var(--cor-apoio);
+}
+
+
+.mainContentForm a{
+    color: var(--cor-principal);
+}
+
+.catImg{
+    width: 50vw;
+    overflow: hidden;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+    display: none; 
+    z-index: 13; 
+}
+
+
+.formLogin{
+    height: 25vw;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.formLogin label:first-child{
+    margin-top: 1vw;
+}
+
+.formLogin label{
+    margin-top: 2vw;
+    font-size: 1vw;
+    font-weight: lighter;
+    color: var(--cor-apoio);
+}
+
+.formLogin input{
+    width: 25vw;
+    height: 2.3vw;
+    margin-top: 1vw;
+    padding: 1vw;
+    background-color: transparent;
+    border: 1px solid var(--cor-apoio);
+    border-radius: 24px;
+    font-size: 1vw;
+    color: var(--cor-apoio);
+}
+
+.formLogin input:focus{
+    outline: none;
+}
+
+input:focus::after {
+    content: '|'; /* O tracinho (representando o cursor) */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #333;
+    animation: blink 1s steps(1) infinite; /* Animação para o efeito piscante */
+}
+
+/* Animação para o tracinho piscante */
+@keyframes blink {
+    50% {
+        opacity: 0; /* Faz o tracinho desaparecer no meio da animação */
+    }
+}
+
+.formLogin button{
+    margin-top: 2vw;
+    height: 3vw;
+}
+
+.formLogin span{
+    color: var(--cor-principal-clara);
+    text-align: center;
+    margin-left:1.5vw;
+    margin-top: 2vw;
+    font-size: 2vw;
+}

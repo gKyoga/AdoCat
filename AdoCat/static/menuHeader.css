@@ -1,0 +1,39 @@
+.headerMenuButton button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos do menu */
+.headerMenu {
+    position: absolute;
+    width: 13vw;
+    height: 7vw;
+    margin: 10vw 0 0 66.5vw;
+    background-color: var(--cor-complementar);
+    font-size: 1.3vw;
+    color: var(--cor-apoio);
+    display: flex;
+    text-align: start;
+    display: none;  
+    flex-direction: column;  
+}
+
+.headerMenu a:hover {
+    color: var(--cor-principal-clara);
+}
+
+.headerMenu div {
+    width: 12vw;
+    margin-top: 0vw;
+    padding: 0.2vw;
+    border-bottom: 1px solid var(--cor-apoio);
+}
+
+.headerMenu div:last-child {
+    border: none;
+}
+
+.headerMenu.active {
+    display: flex; /* Torna o menu visível quando 'active' */
+}

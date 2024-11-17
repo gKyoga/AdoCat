@@ -1,6 +1,9 @@
 /* Importação das Fontes da pagina*/
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 
+@import url("login.css");
+@import url("menuHeader.css");
+
 /* Variaveis de cores*/
 :root{
     /*cores mais claras*/
@@ -36,29 +39,35 @@ body{
 
 /*Formatação do header da pagina*/
 header{
-    margin-top: 50px;
+    margin-top: 5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 11% 0 11%;
+    padding: 0 10vw 0 11vw;
     z-index: 10;
 }
 
 .headerLogo{
     display: flex;
-    font-size: 40px;
+    font-size: 3vw;
     font-weight: lighter;
     color: var(--cor-principal);
 }
 
 .headerLogo img{
-    margin-right: 10px;
+    margin-right: 1vw;
 }
 
+.headerInf{
+    overflow: hidden;
+    width: 27vw;
+    height: 2vw;
+    display: flex;
+}
 
 .headerInf a{
-    margin-left: 10px;
-    font-size: 24px;
+    margin-left: 1vw;
+    font-size: 1.8vw;
     color: var(--cor-complementar);
     font-weight: normal;
 }
@@ -72,6 +81,34 @@ header{
     cursor: pointer;
     color: var(--cor-principal-clara);
 }
+
+.headerInf p{
+    margin-left: 0.5vw;
+    font-size: 1.8vw;
+    color: var(--cor-complementar);
+    font-weight: normal;
+}
+
+
+.headerMenuButton{
+    margin-right: -2vw;
+}
+.headerMenuButton img{
+    width: 1.5vw;
+}
+
+.headerMenuButton button{
+    width: 2vw;
+    height: 2vw;
+    margin: 0.6vw 0 0 -2vw;
+    border: none;
+    background-color:transparent;
+}
+
+.headerMenuButton button:hover{
+    cursor: pointer;
+}
+
 /*Fim da formatação do header*/
 
 /*Formatação do Conteudo principal da pagina*/

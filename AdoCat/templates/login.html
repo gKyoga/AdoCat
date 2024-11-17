@@ -1,0 +1,34 @@
+{%  extends "homepage.html" %}
+
+{%  block conteudo    %}
+<div id="overlay" class="overlay"></div>
+<section class="loginContent" id="loginContent">
+    <div class="catImg">
+        <img src="static/assets/catLogin.png" alt="">
+    </div>
+    <div class="loginForm">
+        <div class="headerForm">
+            <h1>Bem-Vindo!</h1>
+            <p>Ficamos feliz em te ver novamente, os gatinhos estão esperando por você</p>
+        </div>
+        <div class="mainContentForm">
+            <form id="formCadastro" class="formLogin" action="/logar" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+
+                <button type="submit" class="buttonLogin">
+                    <h1>ENTRAR</h1> <img src="static/assets/logoButton.png" draggable="false">
+                </button>
+
+                <p>Não tem cadastro? <a href="/cadastro">Cadastre-se</a></p>
+                <span>{{menssagem}}</span>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+{%  endblock    %}

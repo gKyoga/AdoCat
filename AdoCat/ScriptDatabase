@@ -1,0 +1,41 @@
+-- Criação do banco de dados db_adocat
+CREATE DATABASE IF NOT EXISTS db_adocat;
+USE db_adocat;
+
+-- Tabela tbl_users
+CREATE TABLE IF NOT EXISTS tbl_users (
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
+    nome_user VARCHAR(100) NOT NULL,
+    email_user VARCHAR(100) NOT NULL UNIQUE,
+    senha_user VARCHAR(255) NOT NULL,
+    data_criacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabela tbl_gatos
+CREATE TABLE IF NOT EXISTS tbl_gatos (
+    id_gato INT AUTO_INCREMENT PRIMARY KEY,
+    nome_gato VARCHAR(100) NOT NULL,
+    idade_gato VARCHAR(15) NOT NULL,
+    sexo_gato VARCHAR(6) NOT NULL,
+    vacina_gato BOOLEAN NOT NULL DEFAULT FALSE,
+    descricao_gato TEXT,
+    foto_gato VARCHAR(255),
+    status_gato VARCHAR(50) NOT NULL DEFAULT 'Disponível',
+    user_id INT,
+    data_cadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES tbl_users(id_user)
+);
+
+-- Adiciona a restrição de chave estrangeira no user_id
+ALTER TABLE tbl_gatos
+    ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES tbl_users(id_user);
+
+
+    -- Inserção de Felix na tabela tbl_gatos
+INSERT INTO tbl_gatos (nome_gato, idade_gato, sexo_gato, vacina_gato, descricao_gato, foto_gato, status_gato, user_id, data_cadastro)
+VALUES ('Felix', '3', 'Macho', TRUE, 'Gato preto amigável', 'felix.jpg', 'Disponível', 1, NOW());
+
+-- Inserção de Bocó na tabela tbl_gatos
+INSERT INTO tbl_gatos (nome_gato, idade_gato, sexo_gato, vacina_gato, descricao_gato, foto_gato, status_gato, user_id, data_cadastro)
+VALUES ('Bocó', '6', 'Macho', TRUE, 'Gato touxa amigável', 'Bocó.jpg', 'Disponível', 1, NOW());
+
