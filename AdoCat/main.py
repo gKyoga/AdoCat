@@ -12,7 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = \
     '{SGBD}://{usuario}:{senha}@{servidor}/{database}{versao}'.format(
         SGBD = 'mysql+pymysql',
         senha = 'teste',
-        usuario = 'teste',
+        usuario = 'teste,
         servidor = '127.0.0.1',
         database = 'db_adocat',
         versao = '?charset=utf8mb4',

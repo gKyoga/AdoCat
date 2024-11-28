@@ -5,8 +5,10 @@ import os
 from werkzeug.utils import secure_filename
 
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-UPLOAD_FOLDER = '/home/kyoga/Documentos/AdoCat/AdoCat/static/assets/'
+UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'assets')
+
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 def allowed_file(filename):
