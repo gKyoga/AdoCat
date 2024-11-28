@@ -1,0 +1,173 @@
+.cadastroGato{
+    align-self: center;
+    margin-top: 5vw;
+    background-color: var(--cor-complementar);
+    position: absolute;
+    width: 60vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    z-index: 14; 
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.5s ease;
+}
+
+.gatoForm{
+    width: 30vw;
+    display: flex;
+    padding: 5vw 4vw 7vw 4vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gatoForm input:focus{
+    outline: none;
+}
+
+.gatoFormHeader{
+    height: 10vw;
+    width: 27vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0 -1vw 0 -1vw;
+}
+
+
+.gatoFormHeader h1{
+    margin-left: 1vw;
+    text-align: start;
+    font-size: 3vw;
+    color: var(--cor-apoio);
+}
+
+.gatoFormHeader p{
+    width: 26vw;
+    text-align: start;
+    font-size: 1.1vw;
+    font-weight: lighter;
+    opacity: 80%;
+    color: var(--cor-apoio);
+    margin-left: 1vw;
+}
+
+.gatoFormMain{
+    height: 90vw; 
+}
+
+.formCadastroGato{
+    height: 25vw;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.formCadastroGato label:first-child{
+    margin-top: 1vw;
+}
+
+.formCadastroGato input:nth-child(2), .formCadastroGato input:nth-child(3){
+    display: inline-flex;
+    flex: 1;
+    margin-right: 5vw;
+    
+}
+
+.formCadastroGato label{
+    margin-top: 2vw;
+    font-size: 1vw;
+    font-weight: lighter;
+    color: var(--cor-apoio);
+}
+
+.sexoIdade{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+.sexoIdade label{
+    margin-right: 9.5vw;
+}
+.sexoIdade input{
+    margin-right: 4.2vw;
+}
+
+.formCadastroGato label[for="Vacinas"]{
+    margin-top: 1vw;
+    margin-right: 1vw;
+}
+
+.formCadastroGato input[type ="checkbox"]{
+    margin-top: 1vw;
+    margin-left: 2vw;
+    margin-right: 6vw;
+    width: 5vw;
+    height: 2vh;
+    background-color: var(--cor-apoio);  
+    border: 1px solid var(--cor-principal);
+    box-shadow: none;
+    cursor: pointer;
+}
+.formCadastroGato input[type ="checkbox"]:checked{
+    background-color: var(--cor-principal);
+}
+.formCadastroGato input[type="file"]{
+    width: 8.5vw;
+}
+
+.formCadastroGato input[list]{
+    width: 8vw;
+    height: 2vw;
+    padding: 1vw;
+    background-color: transparent;
+    border: 1px solid var(--cor-apoio);
+    border-radius: 10px;
+    font-size: 1vw;
+    color: var(--cor-apoio);
+}
+
+.formCadastroGato input[type="text"]{
+    width: 25vw;
+    height: 2.3vw;
+    margin-top: 1vw;
+    padding: 1vw;
+    background-color: transparent;
+    border: 1px solid var(--cor-apoio);
+    border-radius: 24px;
+    font-size: 1vw;
+    color: var(--cor-apoio);
+}
+
+.gatoForm button{
+    margin-top: 2vw;
+    height: 3vw;
+}
+
+
+
+.gatoForm img{
+    width: 1.5vw;
+    margin-left: 1.5vw;
+}
+
+.gatoForm button{
+    width: 23vw;
+    height: 19vw;
+    margin: 1vw 0 0 1vw ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: var(--cor-principal);
+    border-radius: 40px;
+    font-size: 0.7vw;
+    font-weight: bold;
+    color:var(--cor-apoio);
+}
+
+.gatoForm button:hover{
+    cursor: pointer;
+    background-color: var(--cor-principal-escura);
+}

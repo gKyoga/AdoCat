@@ -3,7 +3,8 @@ from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
+
 
 app.secret_key = 'ninacomemuito'
 
@@ -17,6 +18,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = \
         versao = '?charset=utf8mb4',
     )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  
+
 
 db = SQLAlchemy(app)
 

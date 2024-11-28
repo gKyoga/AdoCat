@@ -1,0 +1,77 @@
+{% extends "homepage.html" %}
+
+{% block conteudo %}
+<div id="overlay" class="overlay"></div>
+<section class="EditarGato" id="cadastroGato">
+    <div class="catImg">
+        <img src="{{ url_for('static', filename='assets/catLogin.png') }}" alt="">
+    </div>
+    <div class="EditForm">
+        <div class="EditFormHeader">
+            <h1>ATUALIZE AS INFORMAÇÕES DO SEU GATO</h1>
+            <p>Manter as informações atualizadas, é importante para a adoção do seu gato!!</p>
+        </div>
+        <div class="EditFormMain">
+            <form id="formCadastroGato" class="formEditarGato" action="/AtualizarGato/{{ gato.id_gato }}" method="post" enctype="multipart/form-data">
+                <label for="Nome">Nome:</label>
+                <input type="text" id="Nome" name="NomeGato" value="{{ gato.nome_gato }}" required>
+                
+                <div class="sexoIdade">
+                    <label for="Idade">Idade:</label>
+                    <label for="Sexo">Sexo:</label><br>
+                    <input list="idadeGato" name="IdadeGato" value="{{ gato.idade_gato }} Anos">
+                    <datalist id="idadeGato">
+                        <option value="1 Anos">
+                        <option value="2 Anos">
+                        <option value="3 Anos">
+                        <option value="4 Anos">
+                        <option value="5 Anos">
+                        <option value="6 Anos">
+                        <option value="7 Anos">
+                        <option value="8 Anos">
+                        <option value="9 Anos">
+                        <option value="10 Anos">
+                        <option value="11 Anos">
+                        <option value="12 Anos">
+                        <option value="13 Anos">
+                        <option value="14 Anos">
+                        <option value="15 Anos">
+                        <option value="16 Anos">
+                        <option value="17 Anos">
+                        <option value="18 Anos">
+                        <option value="19 Anos">
+                        <option value="20 Anos">
+                    </datalist>
+
+                    <input list="sexoGato" name="SexoGato" value="{{ gato.sexo_gato }}">
+                    <datalist id="sexoGato">
+                        <option value="Macho">
+                        <option value="Femea">
+                    </datalist>
+                </div>
+                <div>
+                    <label for="Vacinas">Tomou todas as Vacinas?</label>
+                    <label for="Foto">Adicione uma foto!</label><br>
+                    
+                    <input type="checkbox" name="VacinaGato" id="vacinasGato" value="1" {% if gato.vacina_gato %}checked{% endif %}> 
+                    <input type="file" name="ImagemGato">
+                </div>    
+                <label for="Descrição">Deixe uma breve descrição do seu gatinho!!</label>
+                <input type="text" name="DescricaoGato" id="descricaoGato" value="{{ gato.descricao_gato }}">
+
+                <button type="submit" class="buttonLogin">
+                    <h1>Atualizar</h1> <img src="{{ url_for('static', filename='assets/logoButton.png') }}" draggable="false">
+                </button>
+                <button type="button" class="buttonLogin" onclick="window.location.href='/DeletarGato/{{ gato.id_gato }}'">
+                    <h1>Deletar</h1> 
+                </button>
+                
+
+                <span>{{ menssagem }}</span>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

@@ -26,22 +26,23 @@ body.no-scroll {
     height: 80vh;
     display: flex;
     flex-direction: row;
-    z-index: 14; /* Fica acima do overlay */
-    opacity: 1; /* Garantindo visibilidade inicial */
-    pointer-events: all; /* Permite interação com a tela flutuante */
-    transition: opacity 0.5s ease; /* Transição suave ao esconder */
+    z-index: 14; 
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.5s ease;
 }
 
 /* Esconder a tela flutuante */
 .loginContent.hidden {
-    opacity: 0; /* Torna invisível */
-    pointer-events: none; /* Desabilita a interação */
+    opacity: 0; 
+    pointer-events: none; 
 }
 
 /* Exibir o overlay */
 .overlay.visible {
-    display: block; /* Torna o overlay visível */
+    display: block; 
 }
+
 .loginForm{
     /* background-color: red; */
     width: 30vw;
@@ -139,33 +140,7 @@ input:focus::after {
 }
 
 
-
-
-.mainContentForm img{
-    width: 1.5vw;
-    margin-left: 1.5vw;
-}
-
-.mainContentForm button{
-    width: 23vw;
-    height: 19vw;
-    margin: 1vw 0 0 1vw ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background-color: var(--cor-principal);
-    border-radius: 40px;
-    font-size: 0.7vw;
-    font-weight: bold;
-    color:var(--cor-apoio);
-}
-
-.mainContentForm button:hover{
-    cursor: pointer;
-    background-color: var(--cor-principal-escura);
-}
-
+m
 .mainContentForm p{
     margin: 1vw 0 0 4vw;
     color: var(--cor-apoio);
@@ -244,14 +219,43 @@ input:focus::after {
 /* Animação para o tracinho piscante */
 @keyframes blink {
     50% {
-        opacity: 0; /* Faz o tracinho desaparecer no meio da animação */
+        opacity: 0; 
     }
 }
 
 .formLogin button{
-    margin-top: 2vw;
+    margin-top: 1vw;
     height: 3vw;
 }
+
+
+
+.formLogin img{
+    width: 1.5vw;
+    margin-left: 1.5vw;
+}
+
+.formLogin button{
+    width: 23vw;
+    height: 3vw;
+    margin: 1vw 0 0 1vw ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: var(--cor-principal);
+    border-radius: 40px;
+    font-size: 0.7vw;
+    font-weight: bold;
+    color:var(--cor-apoio);
+}
+
+.formLogin button:hover{
+    cursor: pointer;
+    background-color: var(--cor-principal-escura);
+}
+
+
 
 .formLogin span{
     color: var(--cor-principal-clara);

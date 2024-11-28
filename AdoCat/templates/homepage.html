@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdoCat</title>
-    <link rel="stylesheet" href="static/reset.css">
-    <link rel="stylesheet" href="static/homestyle.css">
-    <script src="static/script/loginScript.js" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='homestyle.css') }}">
+    <script src="{{ url_for('static', filename='script/loginScript.js') }}" defer></script>
 </head>
 
 <body>
@@ -15,32 +15,31 @@
     <!-- HEADER PAGINA -->
     <header>
         <div class="headerLogo">
-            <img src="static/assets/logo.png" width="9%" draggable="false">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" width="9%" draggable="false">
             <span>ado<b>cat</b></span>
-
         </div>
 
         <div class="headerInf">
-            <a href="/">ínicio</a>
-            <a href="contato">contato</a>
+            <a href="/home">ínicio</a>
+            <a href="/contato">contato</a>
             <p>|</p>
-            <p>Olá, {{usuario}}</p>
+            <p>Olá, {{ usuario }}</p>
         </div>
 
         <div class="headerMenuButton">
-            <button onclick="toggleMenu()"><img src="static/assets/menuHeader.png" alt=""></button>
+            <button onclick="toggleMenu()"><img src="{{ url_for('static', filename='assets/menuHeader.png') }}" alt=""></button>
         </div>
 
         <section class="headerMenu" id="headerMenu" onmouseover="resetTimer()">
             <div class="menuContainer">
                 <div>
-                    <a href="">cadastrar gato</a>
+                    <a href="{{ url_for('CadastroGato') }}">cadastrar gato</a>
                 </div>
                 <div>
                     <a href="">ver perfil</a>
                 </div>
                 <div>
-                    <a href="/logout">
+                    <a href="{{ url_for('logout') }}">
                         logout
                     </a>
                 </div>
@@ -50,31 +49,32 @@
     </header>
     <!-- HEADER PAGINA -->
     
-    {%  block conteudo  %} {%    endblock   %}
+    {% block conteudo %} {% endblock %}
+
+    
     
     <section class="mainContent">
         <div class="mainText">
             <h1>Adote um gatinho</h1>
             <p>Comece escolhendo o posto de adoção mais próximo de sua casa e escolha os gatinhos mais lindo do
                 miiaundo. Deixe o amor felino invadir a sua casa e adote já o seu companheiro.</p>
-            <button onclick="">Adote já!<img src="static/assets/logoButton.png" width="11%" height="10%"
-                    draggable="false"></button>
+            <button onclick="window.location.href='/CadastroGato'">Cadastrar!<img src="{{ url_for('static', filename='assets/logoButton.png') }}" width="11%" height="10%" draggable="false"></button>
         </div>
     </section>
     <div class="mainFt">
-        <img src="static/assets/gatos.png" width="100%" draggable="false">
+        <img src="{{ url_for('static', filename='assets/gatos.png') }}" width="100%" draggable="false">
     </div>
     
     <section class="midContent">
         <div class="midHeader">
             <div class="circulo">
-                <img src="static/assets/logoSearch.png" alt="search" width="70%">
+                <img src="{{ url_for('static', filename='assets/logoSearch.png') }}" alt="search" width="70%">
             </div>
             <div class="circulo">
-                <img src="static/assets/logoHuman.png" alt="dataHuman" width="50%">
+                <img src="{{ url_for('static', filename='assets/logoHuman.png') }}" alt="dataHuman" width="50%">
             </div>
             <div class="circulo">
-                <img src="static/assets/logoCat.png" alt="Cat" width="50%">
+                <img src="{{ url_for('static', filename='assets/logoCat.png') }}" alt="Cat" width="50%">
             </div>
         </div>
     
@@ -100,10 +100,10 @@
         {% for gato in gatos_listados %}
         <div class="feedCard">
             <div class="cardOverlay">
-                <h1>{{gato.nome_gato}}</h1>
-                <button>Adote já!<img src="static/assets/logoButtonBlue.png" draggable="false"></button>
+                <h1>{{ gato.nome_gato }}</h1>
+                <button onclick="window.location.href='/UpdateGato/{{ gato.id_gato }}';">Editar!<img src="{{ url_for('static', filename='assets/logoButtonBlue.png') }}" draggable="false"></button>
             </div>
-            <img src="static/assets/{{gato.foto_gato}}" alt="{{gato.nome_gato}}">
+            <img src="{{ url_for('static', filename='assets/' + (gato.foto_gato if gato.foto_gato else 'default.png')) }}" alt="{{ gato.nome_gato }}">
         </div>
         {% endfor %}
     </section>

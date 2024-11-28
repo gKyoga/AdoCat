@@ -3,6 +3,8 @@
 
 @import url("login.css");
 @import url("menuHeader.css");
+@import url("gatoCadastro.css");
+@import url("updateGato.css");
 
 /* Variaveis de cores*/
 :root{

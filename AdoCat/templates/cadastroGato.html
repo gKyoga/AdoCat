@@ -1,0 +1,76 @@
+{%  extends "homepage.html" %}
+
+{%  block conteudo    %}
+<div id="overlay" class="overlay"></div>
+<section class="cadastroGato" id="cadastroGato">
+    <div class="catImg">
+        <img src="static/assets/catLogin.png" alt="">
+    </div>
+    <div class="gatoForm">
+        <div class="gatoFormHeader">
+            <h1>Cadastre seu Gato!</h1>
+            <p>Pessoas estão ansiosas para conhecer seu gatinho!! Esperamos que ele seja adotado o mais rapido e da forma mais feliz possivel</p>
+        </div>
+        <div class="gatoFormMain">
+            <form id="formCadastroGato" class="formCadastroGato" action="/CadastrarGato" method="post" enctype="multipart/form-data">
+                <label for="Nome">Nome:</label>
+                <input type="text" id="Nome" name="NomeGato" required>
+                
+                <div class="sexoIdade">
+                    <label for="Idade">Idade:</label>
+                    <label for="Sexo">Sexo:</label><br>
+                    <input list="idadeGato" name="IdadeGato">
+                    <datalist id="idadeGato">
+                        <option value="1 Anos">
+                        <option value="2 Anos">
+                        <option value="3 Anos">
+                        <option value="4 Anos">
+                        <option value="5 Anos">
+                        <option value="6 Anos">
+                        <option value="7 Anos">
+                        <option value="8 Anos">
+                        <option value="9 Anos">
+                        <option value="10 Anos">
+                        <option value="11 Anos">
+                        <option value="12 Anos">
+                        <option value="13 Anos">
+                        <option value="14 Anos">
+                        <option value="15 Anos">
+                        <option value="16 Anos">
+                        <option value="17 Anos">
+                        <option value="18 Anos">
+                        <option value="19 Anos">
+                        <option value="20 Anos">
+                    </datalist>
+
+                    <input list="sexoGato" name="SexoGato">
+                    <datalist id="sexoGato">
+                        <option value="Macho">
+                        <option value="Femea">
+                    </datalist>
+                </div>
+                <div>
+                <label for="Vacinas">Tomou todas as Vacinas?</label>
+                <label for="Foto">Adicione uma foto!</label><br>
+                
+                <input type="checkbox" name="VacinaGato" id="vacinasGato" name="VacinaGato" value="1"> 
+                <input type="file" name="image" name="ImagemGato">
+                
+                </div>    
+                <label for="Descrição">Deixe uma breve descrição do seu gatinho!!</label>
+                <input type="text" name="DescricaoGato" id="descricaoGato">
+
+                
+
+                <button type="submit" class="buttonLogin">
+                    <h1>Cadastrar</h1> <img src="static/assets/logoButton.png" draggable="false">
+                </button>
+
+                <span>{{menssagem}}</span>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+{%  endblock    %}
