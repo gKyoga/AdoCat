@@ -97,30 +97,38 @@ def CadastroGato():
 def AdicionaGato():
     try:
         nome = request.form['NomeGato']
-        idade = request.form['IdadeGato']
-        idade = int(idade.replace("Anos", "").strip())
+        idade = int(request.form['IdadeGato'].replace("Anos", "").strip())
         sexo = request.form['SexoGato']
-        vacina = request.form.get('VacinaGato')  
-        vacina = True if vacina else False  
-        descricao = request.form['DescricaoGato'] 
+        vacina = True if request.form.get('VacinaGato') else False
+        descricao = request.form['DescricaoGato']
         usuario = session.get('user_id')
-        imagem = request.files.get('ImagemGato') 
-       
+        imagem = request.files.get('ImagemGato')
+        
         nome_arquivo = None
         if imagem and allowed_file(imagem.filename):
-            nome_arquivo = secure_filename(imagem.filename)  
+            nome_arquivo = secure_filename(imagem.filename)
             caminho_arquivo = os.path.join(UPLOAD_FOLDER, nome_arquivo)
-            imagem.save(caminho_arquivo)  
+            imagem.save(caminho_arquivo)
 
-        new_gato = Gato(nome_gato=nome,idade_gato=idade,sexo_gato=sexo,descricao_gato=descricao,vacina_gato=vacina, user_id=usuario,foto_gato=nome_arquivo)
+        
+        new_gato = Gato(
+            nome_gato=nome,
+            idade_gato=idade,
+            sexo_gato=sexo,
+            descricao_gato=descricao,
+            vacina_gato=vacina,
+            user_id=usuario,
+            foto_gato=nome_arquivo
+        )
 
         db.session.add(new_gato)
         db.session.commit()
-        return redirect('/')
+        return redirect('/home')
 
     except Exception as e:
-        db.session.rollback()  
+        db.session.rollback()
         return f"Erro ao cadastrar o gato: {str(e)}", 500
+
 
 
 

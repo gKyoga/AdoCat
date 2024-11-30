@@ -223,19 +223,19 @@ input:focus::after {
     }
 }
 
-.formLogin button{
+.formLogin button, .mainForm button{
     margin-top: 1vw;
     height: 3vw;
 }
 
 
 
-.formLogin img{
+.formLogin img, .mainForm img{
     width: 1.5vw;
     margin-left: 1.5vw;
 }
 
-.formLogin button{
+.formLogin button, .mainForm button{
     width: 23vw;
     height: 3vw;
     margin: 1vw 0 0 1vw ;
@@ -250,14 +250,14 @@ input:focus::after {
     color:var(--cor-apoio);
 }
 
-.formLogin button:hover{
+.formLogin button, .mainForm button:hover{
     cursor: pointer;
     background-color: var(--cor-principal-escura);
 }
 
 
 
-.formLogin span{
+.formLogin span, .mainForm span{
     color: var(--cor-principal-clara);
     text-align: center;
     margin-left:1.5vw;
